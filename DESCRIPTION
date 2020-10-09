@@ -14,3 +14,5 @@ Depends:
 RoxygenNote: 7.1.1
 URL: https://github.com/snaraya/electoralCL
 BugReports: https://github.com/snaraya/electoralCL/issues
+Suggests: 
+    testthat
