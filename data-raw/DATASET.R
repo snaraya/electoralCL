@@ -126,7 +126,6 @@ electoralCL <- electoralCL %>%
   rename(lastname_p = surname_p,
          lastname_m = surname_m)
 
-
 # prepare_data_sexo_mesa <- prepare_data %>%
 #   mutate(ano_de_eleccion = case_when(
 #     ano_de_eleccion == 1999 ~ 2000,
