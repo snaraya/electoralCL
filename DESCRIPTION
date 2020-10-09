@@ -1,0 +1,14 @@
+Package: electoralCL
+Type: Package
+Title: Paquete de datos electorales en Chile
+Version: 0.1.0
+Author: Soledad Araya
+Maintainer: Soledad Araya <snaraya@uc.cl>
+Description: Paquete que contiene las bases de datos electorales en Chile.
+            Aun en construcción. Con los datos obtenidos del Servicio Electoral de Chile.
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.1.1
