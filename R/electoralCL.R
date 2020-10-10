@@ -1,6 +1,9 @@
 #' Información de las elecciones presidenciales por comunas en Chile.
 #'
 #' Base de datos contiene la información de las elecciones presidenciales desde 1989 a la fecha.
+#' @docType data
+#'
+#' @usage data(electoralCL)
 #'
 #' @format Base de datos con 64366 filas y 18 variables.
 #' \describe{
