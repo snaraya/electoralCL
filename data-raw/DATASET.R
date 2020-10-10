@@ -1,4 +1,3 @@
-## Prepararemos el DF para leer los resultados por comuna:
 
 library(tidyverse)
 library(readxl)
@@ -125,51 +124,6 @@ electoralCL <- prepare_data %>%
 electoralCL <- electoralCL %>%
   rename(lastname_p = surname_p,
          lastname_m = surname_m)
-
-# prepare_data_sexo_mesa <- prepare_data %>%
-#   mutate(ano_de_eleccion = case_when(
-#     ano_de_eleccion == 1999 ~ 2000,
-#     ano_de_eleccion == 2005 ~ 2006,
-#     ano_de_eleccion == 2009 ~ 2010,
-#     T ~ ano_de_eleccion
-#   )) %>%
-#   group_by(ano_de_eleccion, votacion_presidencial, comuna, sexo_mesa, candidato_a) %>%
-#   summarise(votos_por_sexo_mesa = sum(votos_totales, na.rm = T)) %>%
-#   pivot_wider(names_from = c(sexo_mesa, votacion_presidencial), values_from = votos_por_sexo_mesa,
-#               names_sep = "_") %>% clean_names()
-#
-# prepare_data_votacion_presidencial <- prepare_data %>%
-#   mutate(ano_de_eleccion = case_when(
-#     ano_de_eleccion == 1999 ~ 2000,
-#     ano_de_eleccion == 2005 ~ 2006,
-#     ano_de_eleccion == 2009 ~ 2010,
-#     T ~ ano_de_eleccion
-#   )) %>%
-#   group_by(ano_de_eleccion, votacion_presidencial, comuna, candidato_a) %>%
-#   summarise(votos_por_votacion_presidencial = sum(votos_totales, na.rm = T)) %>%
-#   pivot_wider(names_from = votacion_presidencial, values_from = votos_por_votacion_presidencial) %>%
-#   clean_names() %>%
-#   mutate(votos_totales = case_when(
-#     ano_de_eleccion %in% c(1989, 1993) ~ unica_votacion,
-#     T ~ segunda_votacion
-#   )) %>% rename(primera_vuelta = primera_votacion, segunda_vuelta = segunda_votacion)
-#
-#
-# prepare_data <- prepare_data %>%
-#   select(tipo_de_eleccion, cargo, ano_de_eleccion, periodo,
-#          id_region, region, provincia, nombre_provincia, comuna, candidato_a, nombres, apellido_paterno,
-#          apellido_materno, sexo, electo_a, partido, sigla_partido) %>%
-#   mutate(ano_de_eleccion = case_when(
-#     ano_de_eleccion == 1999 ~ 2000,
-#     ano_de_eleccion == 2005 ~ 2006,
-#     ano_de_eleccion == 2009 ~ 2010,
-#     T ~ ano_de_eleccion
-#   )) %>%
-#   distinct()
-#
-# prepare_data_wider <- prepare_data %>%
-#   left_join(prepare_data_sexo_mesa) %>%
-#   left_join(prepare_data_votacion_presidencial)
 
 usethis::use_data(electoralCL, overwrite = TRUE)
 
